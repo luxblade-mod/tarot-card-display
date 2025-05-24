@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Random Tarot Card</title>
+       <style>
+           body {
+               display: flex; 
+               justify-content: center; 
+               align-items: center; 
+               height: 100vh; 
+               background-color: #1a1a1a; 
+               color: white;
+               font-family: Arial, sans-serif;
+           }
+           #card {
+               width: 300px; 
+               height: 450px; 
+               background-size: cover; 
+               margin: 20px; 
+               border: 1px solid white;
+           }
+           button {
+               margin-top: 20px;
+               padding: 10px 20px;
+               background-color: dodgerblue;
+               border: none;
+               color: white;
+               cursor: pointer;
+           }
+       </style>
+   </head>
+   <body>
+       <div id="card"></div>
+       <button onclick="randomCard()">Draw Card</button>
+       <script>
+           const cards = [
+               'tarot_cards/card1.png', 
+               'tarot_cards/card2.png', 
+               'tarot_cards/card3.png',
+	       'tarot_cards/card4.png',
+               'tarot_cards/card5.png',
+           ];
+
+           function randomCard() {
+               const randomIndex = Math.floor(Math.random() * cards.length);
+               document.getElementById('card').style.backgroundImage = `url(${cards[randomIndex]})`;
+           }
+
+           // Automatically display a random card on load
+           randomCard();
+       </script>
+   </body>
+   </html>
